@@ -1,15 +1,15 @@
 import './style.css';
 import { getUsers } from './common/usersAPI';
 
-getUsers().then(json => console.log(json)); // eslint-disable-line no-use-before-define
+getUsers().then((json) => console.log(json)); // eslint-disable-line no-use-before-define
 
- /*
+/*
 class Todo {
     constructor(task,checkbox) {
         this.task = task;
         this.checkbox = checkbox;
     }
-}*/
+} */
 
 class UI {
   static displaytodos() {
