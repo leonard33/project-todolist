@@ -2,17 +2,17 @@ h1 {
   color: rgb(136, 131, 131);
   font-size: 16px;
 }
-  
+
 body {
   align-items: center;
 }
-  
+
 .material-icons {
   color: rgb(136, 131, 131);
   font-size: 14px;
   cursor: move;
 }
-  
+
 .header {
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@ body {
   width: 35vw;
   margin: auto;
 }
-  
+
 .main-container {
   width: 40vw;
   margin: 50px auto;
@@ -28,7 +28,7 @@ body {
   align-items: center;
   text-align: center;
 }
-  
+
 li {
   display: flex;
   align-items: center;
@@ -36,7 +36,7 @@ li {
   justify-content: space-between;
   text-align: left;
 }
-  
+
 .todo-container {
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@ li {
   margin: auto;
   justify-content: space-between;
 }
-  
+
 input {
   border: none;
   outline: none;
@@ -54,7 +54,7 @@ input {
   font-size: 14px;
   font-style: italic;
 }
-  
+
 .todo-data {
   display: flex;
   overflow-wrap: break-word;
@@ -62,7 +62,7 @@ input {
   width: 23vw;
   margin: 5px;
 }
-  
+
 .clear {
   display: flex;
   width: 40vw;
@@ -74,16 +74,16 @@ input {
   align-items: center;
   cursor: pointer;
 }
-  
+
 .clear-btn {
   margin: auto !important;
 }
-  
+
 .delete {
   transform: rotate(90deg);
   cursor: move;
 }
-  
+
 .checkbox {
   border: 2px solid rgb(136, 131, 131);
   width: 10px;

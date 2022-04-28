@@ -11,45 +11,44 @@ class Todo {
     }
 }*/
 
-class UI{
-  static displaytodos () {
-      const todolist = [
-        {
-         task: 'create a html page',
-         checkbox: 'true',
-        },
-        {
-         task: 'create a css page',
-         checkbox: 'true',
-        },
-        {
-         task: 'create a javascript page',
-         checkbox: 'false',
-        }
+class UI {
+  static displaytodos() {
+    const todolist = [
+     {
+        task: 'create a html page',
+        checkbox: 'true',
+      },
+      {
+        task: 'create a css page',
+        checkbox: 'true',
+      },
+      {
+        task: 'create a javascript page',
+        checkbox: 'false',
+      },
     ];
-    
+
     const todos = todolist;
     todos.forEach((todo)=> UI.addtodos(todo));
     console.log(todos);
- }
+}
 
-   static addtodos (todo) {
+  static addtodos (todo) {
     const todolist = document.createElement('li');
-    const checkbox =document.createElement('input');
+    const checkbox = document.createElement('input');
     checkbox.classList.add('checkbox');
-    checkbox.innerHTML = `<div></div>`;
+    checkbox.innerHTML = '<div></div>';
     const newtodo = document.createElement('p');
     newtodo.classList.add('todo-data');
     newtodo.innerHTML = todo.task;
-    const remove = document.createElement('span')
+    const remove = document.createElement('span');
     remove.classList.add('delete');
     remove.innerHTML = '&hellip;';
     todolist.appendChild(checkbox);
     todolist.appendChild(newtodo);
     todolist.appendChild(remove);
-    list.appendChild(todolist);
-   }
-   
+    list.appendChild(todolist); // eslint-disable-line no-use-before-define
+  } 
 }
 
 // const todo = new Todo(task,checkbox);
