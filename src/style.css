@@ -1,0 +1,91 @@
+h1 {
+  color: rgb(136, 131, 131);
+  font-size: 16px;
+}
+
+body {
+  align-items: center;
+}
+
+.material-icons {
+  color: rgb(136, 131, 131);
+  font-size: 14px;
+  cursor: move;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 35vw;
+  margin: auto;
+}
+
+.main-container {
+  width: 40vw;
+  margin: 50px auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
+  align-items: center;
+  text-align: center;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  width: 35vw;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.todo-container {
+  display: flex;
+  align-items: center;
+  width: 35vw;
+  margin: auto;
+  justify-content: space-between;
+}
+
+input {
+  border: none;
+  outline: none;
+  height: 30px;
+  width: 15vw;
+  overflow-wrap: break-word;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.todo-data {
+  display: flex;
+  overflow-wrap: break-word;
+  word-break: break-all;
+  width: 23vw;
+  margin: 5px;
+}
+
+.clear {
+  display: flex;
+  width: 40vw;
+  height: 50px;
+  text-decoration: none;
+  color: grey;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0, rgba(27, 31, 35, 0.15) 0 0 0 1px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.clear-btn {
+  margin: auto !important;
+}
+
+.delete {
+  transform: rotate(90deg);
+  cursor: move;
+}
+
+.checkbox {
+  border: 2px solid rgb(136, 131, 131);
+  width: 10px;
+  height: 10px;
+}
