@@ -15,16 +15,19 @@ class UI {
   static displaytodos() {
     const todolist = [
       {
-        task: 'create a html page',
-        checkbox: 'true',
+        description: 'create a html page',
+        completed: 'true',
+        index: 0,
       },
       {
-        task: 'create a css page',
-        checkbox: 'true',
+        description: 'create a css page',
+        completed: 'true',
+        index: 0,
       },
       {
-        task: 'create a javascript page',
-        checkbox: 'false',
+        description: 'create a javascript page',
+        completed: 'true',
+        index: 0,
       },
     ];
 
@@ -40,7 +43,7 @@ class UI {
     checkbox.innerHTML = '<div></div>';
     const newtodo = document.createElement('p');
     newtodo.classList.add('todo-data');
-    newtodo.innerHTML = todo.task;
+    newtodo.innerHTML = todo.description;
     const remove = document.createElement('span');
     remove.classList.add('delete');
     remove.innerHTML = '&hellip;';
