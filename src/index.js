@@ -1,18 +1,19 @@
-import { getUsers } from "./common/usersAPI";
+import './style.css';
+import { getUsers } from './common/usersAPI';
 
 getUsers().then(json => console.log(json));
-import "./style.css";
 
+/*
 class Todo {
     constructor(task,checkbox) {
         this.task = task;
         this.checkbox = checkbox;
     }
-}
+}*/
 
-class UI {
+class UI{
   static displaytodos () {
-    const todolist = [
+      const todolist = [
         {
          task: 'create a html page',
          checkbox: 'true',
@@ -51,7 +52,7 @@ class UI {
    
 }
 
-//const todo = new Todo(task,checkbox);
+// const todo = new Todo(task,checkbox);
 const list = document.querySelector('.todo-list');
 document.addEventListener('DOMContentLoaded', UI.displaytodos);
 
