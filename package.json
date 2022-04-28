@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/leonard33/project-todolist.git"
   },
-  "eslintIgnore": ["webpack.config.js"],
+  "eslintIgnore": ["webpack.config.js", "usersAPI.JS"],
   "keywords": [],
   "author": "",
   "license": "ISC",

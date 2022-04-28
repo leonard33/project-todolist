@@ -1,9 +1,9 @@
 import './style.css';
 import { getUsers } from './common/usersAPI';
 
-getUsers().then(json => console.log(json));
+getUsers().then(json => console.log(json)); // eslint-disable-line no-use-before-define
 
-/*
+ /*
 class Todo {
     constructor(task,checkbox) {
         this.task = task;
@@ -14,7 +14,7 @@ class Todo {
 class UI {
   static displaytodos() {
     const todolist = [
-     {
+      {
         task: 'create a html page',
         checkbox: 'true',
       },
@@ -29,11 +29,11 @@ class UI {
     ];
 
     const todos = todolist;
-    todos.forEach((todo)=> UI.addtodos(todo));
+    todos.forEach((todo) => UI.addtodos(todo));
     console.log(todos);
-}
+  }
 
-  static addtodos (todo) {
+  static addtodos(todo) {
     const todolist = document.createElement('li');
     const checkbox = document.createElement('input');
     checkbox.classList.add('checkbox');
@@ -48,7 +48,7 @@ class UI {
     todolist.appendChild(newtodo);
     todolist.appendChild(remove);
     list.appendChild(todolist); // eslint-disable-line no-use-before-define
-  } 
+  }
 }
 
 // const todo = new Todo(task,checkbox);
