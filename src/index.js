@@ -55,6 +55,9 @@ const gettodos = () => {
     });
     dustbin.addEventListener('click', () => {
       todos.splice(index, 1);
+      todos.forEach((todo, index) => {
+        todo.index = index + 1;
+      });
       localStorage.setItem('todos', JSON.stringify(todos));
       gettodos();
     });
@@ -76,7 +79,7 @@ createtodo.addEventListener('submit', (e) => {
   const description = inputData.value;
   let index;
   if (localStorage.getItem('todos') === null) {
-    index = 0;
+    index = 1;
   } else {
     index = (JSON.parse(localStorage.getItem('todos'))).length + 1;
   }
