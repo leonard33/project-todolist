@@ -1,95 +1,91 @@
+// css files here
 import './style.css';
-import { getUsers } from './common/usersAPI';
 
-getUsers().then((json) => console.log(json)); // eslint-disable-line no-use-before-define
-
-/*
-class Todo {
-    constructor(task,checkbox) {
-        this.task = task;
-        this.checkbox = checkbox;
-    }
-} */
-
-class UI {
-  static displaytodos() {
-    const todolist = [
-      {
-        description: 'create a html page',
-        completed: 'true',
-        index: 0,
-      },
-      {
-        description: 'create a css page',
-        completed: 'true',
-        index: 0,
-      },
-      {
-        description: 'create a javascript page',
-        completed: 'true',
-        index: 0,
-      },
-    ];
-
-    const todos = todolist;
-    todos.forEach((todo) => UI.addtodos(todo));
-    console.log(todos);
+class TODO {
+  constructor(description, index, completed) {
+    this.description = description;
+    this.index = index;
+    this.completed = completed;
   }
+}
+// query selectors
+const forms = document.querySelector('#form-1');
+const inputData = document.querySelector('#todo-input');
+const list = document.querySelector('.todo-list');
 
-  static addtodos(todo) {
+let todos = [];
+todos = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : [];
+const addTolocalStorage = (inputText) => {
+  todos.push(inputText);
+  localStorage.setItem('todos', JSON.stringify(todos));
+};
+
+const gettodos = () => {
+  let todos;
+  if (localStorage.getItem('todos') === null) {
+    todos = [];
+  } else {
+    todos = JSON.parse(localStorage.getItem('todos'));
+  }
+  list.innerHTML = '';
+  todos.forEach((todo, index) => {
     const todolist = document.createElement('li');
     const checkbox = document.createElement('input');
     checkbox.classList.add('checkbox');
-    checkbox.innerHTML = '<div></div>';
-    const newtodo = document.createElement('p');
+    checkbox.type = checkbox;
+    const newtodo = document.createElement('input');
     newtodo.classList.add('todo-data');
-    newtodo.innerHTML = todo.description;
+    newtodo.value = todo.description;
     const remove = document.createElement('span');
     remove.classList.add('delete');
     remove.innerHTML = '&hellip;';
+    const dustbin = document.createElement('span');
+    dustbin.classList.add('dustbin');
+    dustbin.classList.add('hide');
+    dustbin.innerHTML = '<i class="material-icons dustbin">delete</i>';
     todolist.appendChild(checkbox);
     todolist.appendChild(newtodo);
     todolist.appendChild(remove);
-    list.appendChild(todolist); // eslint-disable-line no-use-before-define
+    todolist.appendChild(dustbin);
+    list.appendChild(todolist);
+
+    remove.addEventListener('click', () => {
+      remove.classList.add('hide');
+      dustbin.classList.remove('hide');
+    });
+    dustbin.addEventListener('click', () => {
+      todos.splice(index, 1);
+      localStorage.setItem('todos', JSON.stringify(todos));
+      gettodos();
+    });
+    newtodo.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        todos[index].description = newtodo.value;
+        localStorage.setItem('todos', JSON.stringify(todos));
+        gettodos();
+      }
+    });
+  });
+
+  return todos;
+};
+
+const createtodo = document.querySelector('#form-1');
+createtodo.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const description = inputData.value;
+  let index;
+  if (localStorage.getItem('todos') === null) {
+    index = 0;
+  } else {
+    index = (JSON.parse(localStorage.getItem('todos'))).length + 1;
   }
-}
 
-// const todo = new Todo(task,checkbox);
-const list = document.querySelector('.todo-list');
-document.addEventListener('DOMContentLoaded', UI.displaytodos);
+  const todo = new TODO(description, index, false);
 
-/*
-const inputDtata = document.querySelector('#todo');
-const add = document.querySelector('#add-todo');
-const outputData = document.querySelector('.output-container');
-
-const addtodos = (e) => {
-    //e.preventDefault;
-    const todos = document.createElement('li');
-    const checkbox =document.createElement('input');
-    checkbox.classList.add('checkbox');
-    checkbox.type = "checkbox";
-    const newtodo = document.createElement('p');
-    newtodo.classList.add('todo-data');
-    newtodo.innerHTML = inputDtata.value;
-    const remove = document.createElement('span')
-    remove.classList.add('delete');
-    remove.innerText = '&hellip;';
-
-    todos.appendChild(checkbox);
-    todos.appendChild(newtodo);
-    todos.appendChild(remove);
-
-    outputData.appendChild(todos);
-
-    inputDtata.value = '';
-
- }
-
-add.addEventListener('click', addtodos);
-inputDtata.addEventListener('keypress', (event)=> {
-    if (event.key == "Enter") {
-        addtodos();
-    }
+  addTolocalStorage(todo);
+  inputData.value = '';
+  gettodos();
 });
-*/
+
+document.addEventListener('DOMContentLoaded', gettodos);
