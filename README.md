@@ -1,62 +1,54 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
-
-# Project Name
-
-> Description the project.
-
-
+# project-todolist
+ This is a Todolist project. 
+ The project has function add remove and edit.
+ 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- HTML
+- css
+- javascript
 
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
+## Live Demo 
+Not available
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+A web browser (e.g. Mozilla Firefox, Google Chrome etc.)
+
+git: This is a version control system used for source code management.
+
+A text editor (e.g Visual Studio Code (recommended), Sublime Text, Atom etc.)
+
+Basic knowledge on HTML Javascript and CSS.
 
 ### Setup
+With git, clone the code to your machine, or download the files directly.
 
-### Install
+git clone https://github.com/leonard33/project-todolist.git
 
-### Usage
-
-### Run tests
+Once the files are on your machine, open the project-todolist folder in Visual Studio Code.
 
 ### Deployment
+After opening the files in Visual studio code.
+Open terminal and run the following commands. npm start.
 
 
 
 ## Authors
 
 👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+  Leonard Kombo
+- GitHub: [@githubhandle](https://github.com/leonard33)
+- Twitter: [@twitterhandle](https://twitter.com/leonardkombo1)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/leonardkombo)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -67,7 +59,6 @@ Give a ⭐️ if you like this project!
 - Hat tip to anyone whose code was used
 - Inspiration
 - etc
-
 ## 📝 License
 
 This project is [MIT](./MIT.md) licensed.
