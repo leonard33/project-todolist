@@ -32,7 +32,10 @@ const gettodos = () => {
     const todolist = document.createElement('li');
     const checkbox = document.createElement('input');
     checkbox.classList.add('checkbox');
-    checkbox.type = checkbox;
+    checkbox.type = 'checkbox';
+    checkbox.name = 'name';
+    checkbox.value = 'value';
+    checkbox.id = 'checkbox-id';
     const newtodo = document.createElement('input');
     newtodo.classList.add('todo-data');
     newtodo.value = todo.description;
