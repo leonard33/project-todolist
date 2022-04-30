@@ -33,8 +33,10 @@ li {
   display: flex;
   align-items: center;
   width: 35vw;
+  margin: 0 auto;
   justify-content: space-between;
   text-align: left;
+  border-top: 1px solid rgb(219, 213, 213);
 }
 
 #form-1 {
@@ -88,13 +90,17 @@ input {
   display: none;
 }
 
-#checkbox-id {
+.checkbox {
   border: 2px solid rgb(136, 131, 131);
-  width: 10px;
-  height: 10px;
+  width: 20px;
+  height: 20px;
 }
 
 .dustbin {
   transform: rotate(180deg);
   font-size: 24px;
+}
+
+.line {
+  text-decoration: line-through;
 }

@@ -1,4 +1,3 @@
-// css files here
 import './style.css';
 
 class TODO {
@@ -35,7 +34,8 @@ const gettodos = () => {
     checkbox.type = 'checkbox';
     checkbox.name = 'name';
     checkbox.value = 'value';
-    checkbox.id = 'checkbox-id';
+    checkbox.checked = todo.completed;
+    checkbox.id = index + 1;
     const newtodo = document.createElement('input');
     newtodo.classList.add('todo-data');
     newtodo.value = todo.description;
@@ -62,13 +62,30 @@ const gettodos = () => {
         todo.index = index + 1;
       });
       localStorage.setItem('todos', JSON.stringify(todos));
-      gettodos();
+      window.location.reload();
     });
     newtodo.addEventListener('keypress', (e) => {
       if (e.key === 'Enter') {
         todos[index].description = newtodo.value;
         localStorage.setItem('todos', JSON.stringify(todos));
         gettodos();
+      }
+    });
+  });
+
+  const checkbox = document.querySelectorAll('.checkbox');
+  checkbox.forEach((e) => {
+    e.addEventListener('change', () => {
+      todos.forEach((element) => {
+        if (element.index.toString() === e.id) {
+          element.completed = e.checked;
+          localStorage.setItem('todos', JSON.stringify(todos));
+        }
+      });
+      if (e.checked) {
+        e.classList.add('line');
+      } else {
+        e.classList.remove('line');
       }
     });
   });
