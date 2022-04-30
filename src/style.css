@@ -37,7 +37,7 @@ li {
   text-align: left;
 }
 
-.todo-container {
+#form-1 {
   display: flex;
   align-items: center;
   width: 35vw;
@@ -84,8 +84,17 @@ input {
   cursor: move;
 }
 
-.checkbox {
+.hide {
+  display: none;
+}
+
+#checkbox-id {
   border: 2px solid rgb(136, 131, 131);
   width: 10px;
   height: 10px;
+}
+
+.dustbin {
+  transform: rotate(180deg);
+  font-size: 24px;
 }

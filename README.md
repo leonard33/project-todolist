@@ -1,5 +1,6 @@
 # project-todolist
  This is a Todolist project. 
+ The project has function add remove and edit.
  
 ## Built With
 
@@ -45,11 +46,9 @@ Open terminal and run the following commands. npm start.
 - Twitter: [@twitterhandle](https://twitter.com/leonardkombo1)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/leonardkombo)
 
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
-
 
 ## Show your support
 
