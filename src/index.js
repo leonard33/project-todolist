@@ -1,12 +1,6 @@
 import './style.css';
+import TODO from './modules/todo.js';
 
-class TODO {
-  constructor(description, index, completed) {
-    this.description = description;
-    this.index = index;
-    this.completed = completed;
-  }
-}
 // query selectors
 const forms = document.querySelector('#form-1');
 const inputData = document.querySelector('#todo-input');
