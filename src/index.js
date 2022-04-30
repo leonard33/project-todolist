@@ -39,6 +39,7 @@ const gettodos = () => {
     const newtodo = document.createElement('input');
     newtodo.classList.add('todo-data');
     newtodo.value = todo.description;
+    newtodo.id = `task${index + 1}`;
     const remove = document.createElement('span');
     remove.classList.add('delete');
     remove.innerHTML = '&hellip;';
@@ -51,7 +52,9 @@ const gettodos = () => {
     todolist.appendChild(remove);
     todolist.appendChild(dustbin);
     list.appendChild(todolist);
-
+    if (todo.completed) {
+      newtodo.classList.add('line');
+    }
     remove.addEventListener('click', () => {
       remove.classList.add('hide');
       dustbin.classList.remove('hide');
@@ -82,10 +85,14 @@ const gettodos = () => {
           localStorage.setItem('todos', JSON.stringify(todos));
         }
       });
+
+      const lineTask = document.getElementById(`task${e.id}`);
       if (e.checked) {
         e.classList.add('line');
+        lineTask.classList.add('line');
       } else {
         e.classList.remove('line');
+        lineTask.classList.remove('line');
       }
     });
   });
@@ -96,19 +103,35 @@ const gettodos = () => {
 const createtodo = document.querySelector('#form-1');
 createtodo.addEventListener('submit', (e) => {
   e.preventDefault();
-  const description = inputData.value;
-  let index;
-  if (localStorage.getItem('todos') === null) {
-    index = 1;
-  } else {
-    index = (JSON.parse(localStorage.getItem('todos'))).length + 1;
+  if (inputData.value) {
+    const description = inputData.value;
+    let index;
+    if (localStorage.getItem('todos') === null) {
+      index = 1;
+    } else {
+      index = (JSON.parse(localStorage.getItem('todos'))).length + 1;
+    }
+
+    const todo = new TODO(description, index, false);
+
+    addTolocalStorage(todo);
+    inputData.value = '';
+    gettodos();
   }
+});
 
-  const todo = new TODO(description, index, false);
+const clearBtn = document.querySelector('.clear-btn');
 
-  addTolocalStorage(todo);
-  inputData.value = '';
-  gettodos();
+clearBtn.addEventListener('click', () => {
+  const filteredArray = (JSON.parse(localStorage.getItem('todos'))).filter((item) => !item.completed);
+
+  filteredArray.forEach((e, index) => {
+    e.index = index + 1;
+  });
+
+  localStorage.setItem('todos', JSON.stringify(filteredArray));
+
+  window.location.reload();
 });
 
 document.addEventListener('DOMContentLoaded', gettodos);
