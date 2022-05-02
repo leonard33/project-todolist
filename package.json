@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/JauJau088/my-webpack-biolerplate/issues"
   },
-  "homepage": "https://github.com/JauJau088/my-webpack-biolerplate#readme",
+  "homepage": "https://leonard33.github.io/project-todolist",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.1",
