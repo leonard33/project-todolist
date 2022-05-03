@@ -41,10 +41,7 @@ const gettodos = () => {
     dustbin.classList.add('dustbin');
     dustbin.classList.add('hide');
     dustbin.innerHTML = '<i class="material-icons dustbin">delete</i>';
-    todolist.appendChild(checkbox);
-    todolist.appendChild(newtodo);
-    todolist.appendChild(remove);
-    todolist.appendChild(dustbin);
+    todolist.append(checkbox, newtodo, remove, dustbin);
     list.appendChild(todolist);
     if (todo.completed) {
       newtodo.classList.add('line');

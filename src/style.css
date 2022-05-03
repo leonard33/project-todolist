@@ -22,7 +22,7 @@ body {
 }
 
 .main-container {
-  width: 40vw;
+  width: 50vw;
   margin: 50px auto;
   box-shadow: rgba(0, 0, 0, 0.24) 0 3px 8px;
   align-items: center;
@@ -67,7 +67,7 @@ input {
 
 .clear {
   display: flex;
-  width: 40vw;
+  width: 50vw;
   height: 50px;
   text-decoration: none;
   color: grey;

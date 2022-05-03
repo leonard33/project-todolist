@@ -7,26 +7,27 @@
   <title>Webpack tutorial</title>
     <script src="https://kit.fontawesome.com/8d28ec52c7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<script defer src="/project-todolist/runtime.js"></script><script defer src="/project-todolist/main.js"></script></head>
+<script defer src="runtime.js"></script><script defer src="main.js"></script></head>
 <body>
     <div class="main-container">
+        <header>
         <div class="header"><h1>Today's Todo List</h1>
             <div class="refresh">
                 <i class="material-icons">autorenew</i>
             </div>
-        </div>
+        </div></header>
+        <form-container>
        <form id="form-1">
         <input type="text" id="todo-input" placeholder="Add to your list..."/>
         <div class="return">
             <button type="submit" id="add-todo"><i class="material-icons">keyboard_return</i></button>
         </div>    
-       <!--<button id="add-todo">Add Todo</button>--> 
-       </form>
+       </form></form-container>
        <div class="output-container">
            <ul class="todo-list"></ul>
        </div>
        <div class="clear">
-           <div class="clear-btn">Clear all completed</div>
+           <a class="clear-btn">Clear all completed</a>
        </div> 
     </div>
 </body>

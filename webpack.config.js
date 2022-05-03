@@ -3,8 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: '__webpack_public_path__ = window.myDynamicPublicPath',
-  // entry: './src/index.js',
+  // entry: '__webpack_public_path__ = window.myDynamicPublicPath',
+  entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
     static: './dist',
