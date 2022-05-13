@@ -1,6 +1,7 @@
 # project-todolist
  This is a Todolist project. 
  The project has function add remove and edit.
+ The project on todolist is like a notebook of your list of things you have to do in some scheduled time, when you have done it you can check it off and even be able to delete it. you can also edit  your todo if you need something added or reduced.
  
 ## Built With
 
